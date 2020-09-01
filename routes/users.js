@@ -1,9 +1,13 @@
-var express = require('express');
-var router = express.Router();
+var router = require("express").Router();
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+//GET /users
+router.get("/", function (req, res) {
+  res.render("index", { user: req.user });
 });
+
+function isLoggedIn(req, res, next) {
+  if (req.isAuthenticated()) return next();
+  res.redirect("/auth/google");
+}
 
 module.exports = router;
