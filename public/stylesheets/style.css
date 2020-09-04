@@ -1,9 +1,9 @@
 body,
 html {
   height: 100%;
-  color: #62411f;
+  color: blue;
   margin: 0px;
-  background-color: #fcf9f9;
+  background-color: black;
   font-family: "Concert One", cursive;
 }
 
@@ -15,7 +15,7 @@ html {
 }
 
 a {
-  color: #62411f;
+  color: lightblue;
   text-decoration: none;
 }
 
@@ -46,7 +46,7 @@ li {
 nav {
   display: flex;
   padding: 20px;
-  background-color: #e9fbff;
+  background-color: whitesmoke;
   flex-direction: row-reverse;
   justify-content: space-between;
 }
@@ -71,7 +71,7 @@ input.nav {
   text-align: center;
   border-radius: 50%;
   padding: 50px 10px;
-  background-color: #f3dcfd;
+  background-color: grey;
   margin-bottom: 20px;
   width: 190px;
 }
@@ -81,15 +81,15 @@ input.nav {
 }
 
 #dropUl {
-  background: #e9fbff;
+  background: whitesmoke;
   list-style: none;
   margin: 0;
   padding-left: 0;
 }
 
 #dropLi {
-  color: #62411f;
-  background: #e9fbff;
+  color: blue;
+  background: whitesmoke
   display: block;
   padding: 1rem;
   float: left;
@@ -98,9 +98,9 @@ input.nav {
 }
 
 li input {
-  color: #62411f;
+  color: blue;
   border: none;
-  background: #e9fbff;
+  background: whitesmoke;
   outline: none;
   background-color: transparent;
   font-size: 15px;
@@ -108,11 +108,11 @@ li input {
 
 #dropLi:hover {
   font-size: 130%;
-  background: #f7e8ed;
+  background: whitesmoke;
 }
 
 #dropUl #dropLi #dropUl {
-  background: #e9fbff;
+  background: whitesmoke;
   visibility: hidden;
   opacity: 0;
   min-width: 5rem;
@@ -188,7 +188,7 @@ h1 {
 button[type="submit"],
 #profileBtn {
   color: white;
-  background-color: #62411f;
+  background-color: blue;
   border-radius: 20%;
   padding: 15px 30px;
   border: none;
@@ -209,7 +209,7 @@ button[type="submit"],
   margin-left: 30%;
   display: flex;
   justify-content: center;
-  background-color: #fcf9f9ad;
+  background-color: grey;
   width: 40%;
   border-radius: 5%;
 }
@@ -217,11 +217,13 @@ button[type="submit"],
 #addFollow,
 #editBtn,
 #addToFollow {
-  font-family: "Concert One", cursive;
+  
+font-family: 'Gayathri', sans-serif;
+
 }
 
 #delBtn {
-  background-color: #f3d0dc;
+  background-color: whitesmoke;
   outline: none;
 }
 
