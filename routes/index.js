@@ -1,9 +1,15 @@
-var router = require("express").Router();
+var express = require("express");
+var router = express.Router();
 const passport = require("passport");
+const userCtrl = require("../controllers/following");
 
 // The root route renders our only view
+router.get("/index", function (req, res) {
+  res.render("index");
+});
+
 router.get("/", function (req, res) {
-  res.redirect("/users");
+  res.redirect("/index");
 });
 
 // Google OAuth login route
@@ -16,7 +22,7 @@ router.get(
 router.get(
   "/oauth2callback",
   passport.authenticate("google", {
-    successRedirect: "/users",
+    successRedirect: "/index",
     failureRedirect: "/users",
   })
 );
@@ -24,7 +30,7 @@ router.get(
 // OAuth logout route
 router.get("/logout", function (req, res) {
   req.logout();
-  res.redirect("/");
+  res.redirect("/index");
 });
 
 module.exports = router;

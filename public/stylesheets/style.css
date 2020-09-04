@@ -1,8 +1,247 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+body,
+html {
+  height: 100%;
+  color: #62411f;
+  margin: 0px;
+  background-color: #fcf9f9;
+  font-family: "Concert One", cursive;
+}
+
+.mainview {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 a {
-  color: #00B7FF;
+  color: #62411f;
+  text-decoration: none;
+}
+
+#link {
+  text-decoration: underline;
+}
+
+li {
+  list-style: none;
+}
+
+#followIndex {
+  padding-left: 30%;
+}
+
+#followIndex > ul {
+  font-size: 20px;
+}
+
+#delPlayer {
+  display: inline-block;
+}
+
+#delFollow > button {
+  padding: 10px 15px;
+}
+
+nav {
+  display: flex;
+  padding: 20px;
+  background-color: #e9fbff;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+.nav {
+  padding: 15px;
+  text-decoration: none;
+}
+
+a:hover {
+  font-size: 130%;
+}
+
+input.nav {
+  width: 150%;
+  outline: none;
+  border: none;
+  border-radius: 6%;
+}
+
+#player {
+  text-align: center;
+  border-radius: 50%;
+  padding: 50px 10px;
+  background-color: #f3dcfd;
+  margin-bottom: 20px;
+  width: 190px;
+}
+
+#browse {
+  font-family: "Concert One", cursive;
+}
+
+#dropUl {
+  background: #e9fbff;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+#dropLi {
+  color: #62411f;
+  background: #e9fbff;
+  display: block;
+  padding: 1rem;
+  float: left;
+  position: relative;
+  text-decoration: none;
+}
+
+li input {
+  color: #62411f;
+  border: none;
+  background: #e9fbff;
+  outline: none;
+  background-color: transparent;
+  font-size: 15px;
+}
+
+#dropLi:hover {
+  font-size: 130%;
+  background: #f7e8ed;
+}
+
+#dropUl #dropLi #dropUl {
+  background: #e9fbff;
+  visibility: hidden;
+  opacity: 0;
+  min-width: 5rem;
+  position: absolute;
+  margin-top: 1rem;
+  left: 0;
+  display: none;
+}
+
+#dropUl #dropLi:hover > #dropUl,
+#dropUl #dropLi #dropUl:hover {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+
+#dropUl #dropLi #dropUl #dropLi {
+  clear: both;
+  width: 80%;
+}
+
+h1 {
+  font-size: 50px;
+  text-align: center;
+  font-family: "Chicle", cursive;
+}
+
+#profile {
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+#profile div {
+  padding: 30px 0px 0px 15px;
+}
+
+#avatar {
+  width: 100px;
+  border-radius: 50%;
+}
+
+.center {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#playerIndex {
+  padding-right: 12%;
+  padding-left: 12%;
+}
+
+#playerDisplay {
+  display: flex;
+  justify-content: space-between;
+}
+
+#newForm {
+  padding-bottom: 20px;
+}
+
+#newForm > input {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.inputLabel h3,
+.inputLabel p {
+  display: inline;
+}
+
+#newForm > input[type="submit"],
+button[type="submit"],
+#profileBtn {
+  color: white;
+  background-color: #62411f;
+  border-radius: 20%;
+  padding: 15px 30px;
+  border: none;
+}
+
+#newForm > input[type="submit"]:hover,
+#editBtn:hover,
+#addFollow:hover,
+#delBtn:hover,
+#addToFollow:hover,
+#submitBtn:hover {
+  font-size: 150%;
+}
+
+#intro {
+  text-align: center;
+  margin-top: 100px;
+  margin-left: 30%;
+  display: flex;
+  justify-content: center;
+  background-color: #fcf9f9ad;
+  width: 40%;
+  border-radius: 5%;
+}
+
+#addFollow,
+#editBtn,
+#addToFollow {
+  font-family: "Concert One", cursive;
+}
+
+#delBtn {
+  background-color: #f3d0dc;
+  outline: none;
+}
+
+#editBtn,
+#addToFollow,
+#submitBtn {
+  outline: none;
+}
+
+#editBtn > a:hover {
+  font-size: 100%;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+button > a {
+  color: white;
+  text-decoration: none;
 }

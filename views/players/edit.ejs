@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      href="https://fonts.googleapiscom/css2?family=Gayathri&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Edit Hooper</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav">
+        <a href="/index" class="nav">Home Page</a>
+        <% if (user) { %>
+        <a href="/profile/show" class="nav">My Profile</a>
+        <% } else { %>
+        <a href="/auth/google" class="nav">Login with Google</a>
+        <% } %>
+      </div>
+      <a href="/players/index" class="nav">Hoopers</a>
+    </nav>
+    <h1><%= player.name %></h1>
+    <div class="center">
+      <form action="/players/<%= player.id %>?_method=PUT" method="POST">
+        <div id="newForm">
+          <div class="inputLabel"><h3>Hooper Name</h3></div>
+          <input type="text" name="name" value="<%= player.name %>" />
+        </div>
+        <div id="newForm">
+          <div class="inputLabel"><h3>Team Name</h3></div>
+          <input type="text" name="team" value="<%= player.team %>" />
+        </div>
+        <div id="newForm">
+          <div class="inputLabel">
+            <h3>Position</h3>
+            <p>(required)</p>
+          </div>
+          <input type="checkbox" id="Point-Guard" name="position"
+          value="Point-Guard" <%= player.position.includes('Point-Guard') ?
+          'checked' : '' %>>
+          <label for="action"> Point Guard</label><br />
+          <input type="checkbox" id="Shooting-Guard" name="position"
+          value="Shooting-Guard" <%= player.position.includes('Shooting-Guard')
+          ? 'checked' : '' %>>
+          <label for="action"> Shooting Guard</label><br />
+          <input type="checkbox" id="Power-Forward" name="position"
+          value="Power-Forward" <%= player.position.includes('Power-Forward') ?
+          'checked' : '' %>>
+          <label for="action"> Power Forward</label><br />
+          <input type="checkbox" id="Small-Forward" name="position"
+          value="Small-Forward" <%= player.position.includes('Small-Forward') ?
+          'checked' : '' %>>
+          <label for="action"> Small Forward</label><br />
+          <input type="checkbox" id="Center" name="position" value="Center" <%=
+          player.position.includes('Center') ? 'checked' : '' %>>
+          <label for="action"> Center</label><br />
+        </div>
+        <div id="newForm">
+          <div class="inputLabel"><h3>Age</h3></div>
+          <input type="number" value="<%= player.age %>" name="age" />
+        </div>
+        <div id="newForm">
+          <div class="inputLabel"><h3>Height</h3></div>
+          <input type="number" value="<%= player.height %>" name="height" />
+        </div>
+        <div class="center">
+          <button type="submit" id="submitBtn">Submit</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

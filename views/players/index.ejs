@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      href="https://fonts.googleapiscom/css2?family=Gayathri&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../stylesheets/style.css" />
+    <title>View All Hoppers</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav">
+        <a href="/index" class="nav">Home Page</a>
+        <% if (user) { %>
+        <a href="/profile/show" class="nav">My Profile</a>
+        <% } else { %>
+        <a href="/auth/google" class="nav">Login with Google</a>
+        <% } %>
+      </div>
+      <form action="/players" method="GET">
+        <input
+          class="nav"
+          type="search"
+          name="player"
+          placeholder="Search Hooper"
+          autocomplete="off"
+        />
+      </form>
+      <ul id="dropUl">
+        <li id="dropLi">
+          View Hooper By Position
+          <ul id="dropUl" class="dropdown" aria-label="submenu">
+            <li id="dropLi">
+              <form action="/players" method="GET">
+                <input
+                  type="submit"
+                  value="Point Guard"
+                  name="position"
+                  id="view"
+                />
+              </form>
+            </li>
+            <li id="dropLi">
+              <form action="/players" method="GET">
+                <input
+                  type="submit"
+                  value="Shooting Guard"
+                  name="position"
+                  id="view"
+                />
+              </form>
+            </li>
+            <li id="dropLi">
+              <form action="/players" method="GET">
+                <input
+                  type="submit"
+                  value="Power Forward"
+                  name="position"
+                  id="view"
+                />
+              </form>
+            </li>
+            <li id="dropLi">
+              <form action="/players" method="GET">
+                <input
+                  type="submit"
+                  value="Small Forward"
+                  name="position"
+                  id="view"
+                />
+              </form>
+            </li>
+            <li id="dropLi">
+              <form action="/players" method="GET">
+                <input type="submit" value="Center" name="position" id="view" />
+              </form>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <h1>Hooper</h1>
+    <div id="playerIndex">
+      <% if players.length) { %> <% players.forEach(function(player, idx) { %>
+      <% if (idx % 4 === 0) { %>
+      <div id="playerDisplay">
+        <li id="player">
+          <a href="/players/<%= player.id %>"><%= player.name %></a>
+        </li>
+        <% } else { %>
+        <li id="player">
+          <a href="/players/<%= player.id %>"><%= player.name %></a>
+        </li>
+        <% } %> <% if ((idx % 4 === 3) && (idx !== 0)) { %>
+      </div>
+      <% } %> <% }) %> <% } else { %>
+      <div class="center">
+        <h3>No Hooper Found</h3>
+      </div>
+      <div class="center">
+        <a href="/players/new" id="link">Add Hooper</a>
+        <a href="/players/index" id="link">Back to View All Hoopers</a>
+      </div>
+      <% } %>
+    </div>
+  </body>
+</html>

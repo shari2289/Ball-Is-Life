@@ -14,19 +14,14 @@ passport.use(
       User.findOne({ googleId: profile.id }, function (err, user) {
         if (err) return cb(err);
         if (user) {
-          if (!user.avatar) {
-            user.avatar = profile.photos[0].value;
-            user.save(function (err) {
-              return cb(null, user);
-            });
-          } else {
-            return cb(null, user);
-          }
+          return cb(null, user);
         } else {
           const newUser = new User({
             name: profile.displayName,
             email: profile.emails[0].value,
             googleId: profile.id,
+            avatar: profile.photos[0],
+            value,
           });
           newUser.save(function (err) {
             if (err) return cb(err);

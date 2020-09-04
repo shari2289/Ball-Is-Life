@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      href="https://fonts.googleapiscom/css2?family=Gayathri&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../stylesheets/style.css" />
+    <title>New Hooper</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav">
+        <% if (user) { %>
+        <a href="/profile/show" class="nav">My Profile</a>
+        <a href="/logout" class="nav">Log Out</a>
+        <% } else { %>
+        <a href="/auth/google" class="nav">Login with Google</a>
+        <% } %>
+        <a href="/index" class="nav">Home Page</a>
+      </div>
+      <a href="/players/index" class="nav">Hoopers</a>
+    </nav>
+    <h1>Add Hooper</h1>
+    <div class="center">
+      <form action="/players" autocomplete="off" method="POST">
+        <div id="newForm">
+          <div class="inputLabel">
+            <h3>Name</h3>
+            <p>(required)</p>
+          </div>
+          <input type="text" name="name" id="input" />
+        </div>
+        <div id="newForm">
+          <div class="inputLabel"><h3>Team Name</h3></div>
+          <input type="text" name="team" id="input" />
+        </div>
+        <div id="newForm">
+          <div class="inputLabel">
+            <h3>Age</h3>
+            <p>(required)</p>
+          </div>
+          <input type="number" name="age" />
+        </div>
+        <div id="newForm">
+          <div class="inputLabel">
+            <h3>Height</h3>
+            <p>(required)</p>
+          </div>
+          <input type="number" name="height" />
+        </div>
+        <div class="inputLabel">
+          <h3>Position</h3>
+          <p>(required)</p>
+        </div>
+        <div id="newForm">
+          <input
+            type="checkbox"
+            id="Point-Guard"
+            name="position"
+            value="Point-Guard"
+          />
+          <label for="Point-Guard"> Point Guard</label><br />
+
+          <input
+            type="checkbox"
+            id="Shooting-Guard"
+            name="position"
+            value="Shooting-Guard"
+          />
+          <label for="Shooting-Guard"> Shooting Guard</label><br />
+
+          <input
+            type="checkbox"
+            id="Power-Forward"
+            name="position"
+            value="Power-Forward"
+          />
+          <label for="Power-Forward"> Power Forward</label><br />
+
+          <input
+            type="checkbox"
+            id="Small-Forward"
+            name="position"
+            value="Small-Forward"
+          />
+          <label for="Small-Forward"> Small Forward</label><br />
+
+          <input type="checkbox" id="Center" name="position" value="Center" />
+          <label for="Center"> Center</label><br />
+        </div>
+        <div class="center">
+          <div id="newForm">
+            <input type="submit" value="Submit" id="editBtn" />
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

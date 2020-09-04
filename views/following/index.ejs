@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      href="https://fonts.googleapiscom/css2?family=Gayathri&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gayathri&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../stylesheets/style.css" />
+    <title>Following</title>
+  </head>
+  <body>
+    <nav>
+      <a href="/index" class="nav">Home Page</a>
+      <a href="players/index" class="nav">Hoopers</a>
+    </nav>
+    <h1>Hoopers On My Radar</h1>
+    <div id="followIndex">
+      <ul>
+        <% user.following.forEach(function(follow, idx) { %>
+        <li>
+          <form
+            action="/following/<%= idx %>?_method=DELETE"
+            method="POST"
+            id="delFollow"
+          >
+            <button type="submit" id="delBtn">X</button>
+          </form>
+          <%= follow.name %>
+        </li>
+        <br />
+        <% }) %>
+      </ul>
+    </div>
+    <div class="center">
+      <% if (user) { %>
+      <button type="submit">
+        <a href="/players/index" id="addFollow">Follow</a>
+      </button>
+      <% } %>
+    </div>
+  </body>
+</html>
