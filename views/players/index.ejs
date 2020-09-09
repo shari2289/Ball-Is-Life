@@ -9,7 +9,7 @@
   </head>
 
   <body>
-    <% include ../partials/header %>
+    <% include ../partials/nav %>
 
     <div id="container">
       <h2>All Players</h2>
@@ -31,16 +31,7 @@
           <tbody>
             <% players.forEach(function(p) { %>
             <tr>
-              <td>
-                <div>
-                  <img
-                    class="img"
-                    src="<%= p.img %>"
-                    width="100px"
-                    length="50px"
-                  />
-                </div>
-              </td>
+              <td></td>
               <td><%= p.hooper %></td>
               <td><%= p.avgRating %></td>
               <td><a href="/players/<%= p._id %>" id="detailsLink">Info</a></td>

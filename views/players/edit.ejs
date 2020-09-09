@@ -1,6 +1,5 @@
 <link rel='stylesheet' href='/stylesheets/edit.css' />
-<% include ../partials/header %>
-<body>
+<% include ../partials/nav %>
     <div id="container">
         <form action="/players/<%= player._id %>?_method=PUT" method="POST">
             <label for="player">
@@ -39,5 +38,4 @@
             <button class="submit-button" id="button" type="submit">Save Hooper</button>
         </form>
     </div>
-  </body>
     <% include ../partials/footer %>
