@@ -8,10 +8,10 @@ An App that allows you to connect with other Underground Hoopers! Rate and Add P
 - HTML
 - CSS
 - JavaScript
--EJS
--OAuth
--Mongoose
--MongoDB
+- EJS
+- OAuth
+- Mongoose
+- MongoDB
 
 
 ## Getting Started
@@ -25,8 +25,8 @@ Please use the links listed to conect with the app and to view Trello Board.
 
 
 ## IceBox 
--Following Option (to follow player interested)
--Add Team Options (with ability to group and search by teams)
--Add Search Options
--Add Comment Options
--Add more Stats Options
+- Following Option (to follow player interested)
+- Add Team Options (with ability to group and search by teams)
+- Add Search Options
+- Add Comment Options
+- Add more Stats Options
