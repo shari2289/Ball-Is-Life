@@ -6,10 +6,7 @@
                 <h2>
                     <%= player.hooper %>
                 </h2>
-            </div>
-            <div>
-                <img class="img" src="<%= player.img %>"></div>
-            <div>
+              </div>
                 <BR>
                 <div>
                     <BR>
@@ -41,13 +38,6 @@
           </div>
                 <div>
                     <BR>
-                    <h4>Comments</h4>
-                </div>
-                <div>
-                    <%= player.comments %>
-                </div>
-                <div>
-                    <BR>
                     <% if (user &&(player.athlete.equals(user._id))){ %>
                         <a href="/players/<%=player._id%>/edit" id="button"> &nbsp; Edit Hooper &nbsp; </a>
                         <BR>
@@ -62,7 +52,7 @@
         </section>
     </div>
     <br><br>
-    <div id="reviewContainer">
+    <div id="commentContainer">
         <h2>Comments</h2>
         <form id="add-comment-form" method="POST" action="/players/<%= player._id %>/comments">
             <% if (user) { %>
@@ -89,8 +79,8 @@
                 <BR>
                 <input type="submit" value="Add Comment" id="button">
         </form>
-        <% } %>content
-            <div id="comments">
+        <% } %>
+            <div id="content">
                 <% if (player.comments.length) { %>
                     <table>
                         <thead>

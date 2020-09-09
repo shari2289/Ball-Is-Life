@@ -44,7 +44,7 @@ let playerSchema = new Schema(
       type: Number,
     },
     height: {
-      type: Number,
+      type: String,
     },
     position: {
       type: String,
