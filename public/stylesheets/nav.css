@@ -1,37 +1,36 @@
 @import url("https://fonts.googleapis.com/css2?family=Syne:wght@600&display=swap");
 
-body {
-  padding: 50px;
-  font-family: 16px "Syne", sans-serif;
-  height: 100%;
-  background-size: auto;
-  background: url("https://i.imgur.com/BOILyxE.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: red;
-  align-content: center;
+* {
+  margin: 0;
 }
 
-main {
-  background-color: grey;
-  position: relative;
-  font-family: 18px "Syne", sans-serif;
-  background-color: whitesmoke;
-  width: 50vw;
-  padding: 0;
-  align-self: center;
+h1 {
+  font-family: "Syne", sans-serif;
+  text-align: center;
+  font-size: 3.5em;
+  color: whitesmoke;
 }
 
-nav {
-  position: relative;
-  font-family: 18px "Syne", sans-serif;
-  background-color: red;
-  width: 50vw;
-  height: 5vh;
-  padding: 0;
-  align-self: center;
+.header-container {
+  background-color: darkred;
+  padding: 15px;
+}
+
+.nav-container {
+  background-color: black;
+  font-family: "Syne", sans-serif;
+  display: flex;
+  justify-content: space-around;
+  padding: 15px;
+  margin-bottom: 80px;
 }
 
 a {
   color: blue;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+}
+
+a:hover {
+  color: orange;
 }

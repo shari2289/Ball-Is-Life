@@ -54,7 +54,7 @@
     <br><br>
     <div id="commentContainer">
         <h2>Comments</h2>
-        <form id="add-comment-form" method="POST" action="/players/<%= player._id %>/comments">
+        <form id="add-comment-form" method="POST" action="/players/<%= player._id %>/comments"></form>
             <% if (user) { %>
                 <label>Rating:</label>
                 <BR>
@@ -62,9 +62,7 @@
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
-            <option selected="selected">
-                4
-            </option>
+            <option value="4">4</option>
             <option value="5">5</option>
             <option value="6">6</option>
             <option value="7">7</option>
