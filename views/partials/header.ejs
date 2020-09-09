@@ -1,49 +1,23 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Hoopers 4 Life</title>
-    <!-- Google Icon Fonts used by Materialize -->
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <!-- Materialize CSS Framework -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
-    <link rel="stylesheet" href="stylesheets/style.css" />
-    <!-- JavaScript for Materialize -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  </head>
+<link rel="stylesheet" type="text/css" href="/stylesheets/nav.css">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500&display=swap" rel="stylesheet">
+<!-- views/partials/header.ejs -->
+<body>
+<div class="header-container">
+    <h1>
+        Hoopers 4 Life!!!!
+    </h1>
+</div>
+<div class="nav-container">
+    <% if (user) { %>
+        <a href="/players/new">Add a Hooper</a>
+        <% } %>
+            &nbsp; &nbsp; | <a href="/players">All Hoopers</a>| &nbsp; &nbsp;
+            <% if (user) { %>
+                <a href="/logout">Log Out</a>
+                <% } else { %>
+                    <a href="/auth/google">Login with Google</a>
+                    <% } %>
 
-  <body>
-    <div class="navbar-fixed">
-      <nav>
-        <div class="nav-wrapper">
-          <a href="" class="brand-logo left">Hoopers 4 Life</a>
-          <ul class="right">
-            <li>
-              <a href="/players"
-                ><i class="material-icons left">trending_flat</i>Players of
-                Tomorrow</a
-              >
-            </li>
-
-            <li>
-              <% if (user) { %>
-              <a href="/logout"
-                ><i class="material-icons left">trending_flat</i>Log Out</a
-              >
-              <% } else { %>
-              <a href="/auth/google"
-                ><i class="material-icons left">vpn_key</i>Login with Google</a
-              >
-              <% } %>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-  </body>
-</html>
+</div>
+</div>
+</body>

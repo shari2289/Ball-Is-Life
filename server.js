@@ -1,3 +1,4 @@
+var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
 var logger = require("morgan");
@@ -19,9 +20,9 @@ require("./config/passport");
 
 // require our routes
 var indexRouter = require("./routes/index");
-var profileRouter = require("./routes/profile");
-var followingRouter = require("./routes/following");
 var playersRouter = require("./routes/players");
+var athletesRouter = require("./routes/athletes");
+var commentsRouter = require("./routes/comments");
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -52,9 +53,9 @@ app.use(function (req, res, next) {
 });
 
 app.use("/", indexRouter);
-app.use("/profile", profileRouter);
-app.use("/following", followingRouter);
 app.use("/players", playersRouter);
+app.use("/", athletesRouter);
+app.use("/", commentsRouter);
 
 // invalid request, send 404 page
 app.use(function (req, res) {

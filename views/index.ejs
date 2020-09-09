@@ -1,42 +1,39 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <link
-      href="https://fonts.googleapiscom/css2?family=Gayathri&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Gayathri&display=swap"
-      rel="stylesheet"
-    />
-  <title>Hoopers 4 life</title>
-  <link rel="stylesheet" href="/stylesheets/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/landing.css">
+    <title>Document</title>
 </head>
-<body class="mainview">
-  <nav>
-    <div class="nav">
-      <% if (user) { %>
-        <a href="profile/show" class="nav">My Profile</a>
-        <a href="/logout" class="nav">Log Out</a>
-        <% } else { %>
-          <a href="/auth/google" class="nav">Login with Google</a>
-      <% } %>
+
+<body>
+    <div id="frame">
+        <h2> Welcome to </h2>
+        <h1> Hoopers 4 Life!! </h1>
+        <h4>This is an app that allows you to connect with other underground Hoopers! <br> 
+          Get on their RADAR！<br>
+          Go make yourself known, connect and enjoy!</h3>
+        </h4>
+        <div>
+            <% if (user) { %>
+                <button>
+                <a href="/logout"></i>Log Out</a></button>
+                <% } else { %>
+                    <button>
+                <a href="/auth/google"></i>Login with Google</a></button>
+                    <% } %>
+                        &nbsp; &nbsp; | &nbsp; &nbsp;
+                        <% if (user) { %>
+                            <button><a href="/players">Back to Players</button></a>
+                            <% } else { %>
+                                <button><a href="/players">Proceed without Login</button></a>
+                                <% } %>
+        </div>
     </div>
-    <a href="players/index" class="nav">Hoopers</a>
-  </nav>
-  <h1>Hoopers 4 Life</h1>
-  <div id="welcome">
-    <h3>What's up Hoopers?,<br>
-      Welcome to a World for Hoopers...<br>
-      This is an app that allows you to connect with other underground Hoopers! <br> 
-      Get on their RADAR！<br>
-      Go make yourself known, connect and enjoy!</h3>
-  </div>
-  </div>
 </body>
-<script type="text/javascript">
-</script>
+
 </html>
 
 <%- include('./partials/footer.ejs')-%>

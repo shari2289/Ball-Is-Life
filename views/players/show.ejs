@@ -1,59 +1,127 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <link
-      href="https://fonts.googleapiscom/css2?family=Gayathri&display=swap"
-      rel="stylesheet"
-    />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../stylesheets/style.css" />
-    <title>Hooper Info</title>
-  </head>
-  <body>
-    <nav>
-      <div class="nav">
-        <a href="/index" class="nav">Home Page</a>
-        <% if (user) { %>
-        <a href="profile/show" class="nav">My Profile</a>
-        <a href="/logout" class="nav">Log Out</a>
-        <% } else { %>
-        <a href="/auth/google" class="nav">Login with Google</a>
-        <% } %>
-      </div>
-      <a href="/players/index" class="nav">Hoopers</a>
-    </nav>
-    <h1><%= player.name %></h1>
-    <div class="center"><h2>Name</h2></div>
-    <div class="center">
-      <% if (player.team.length) { %>
-      <h7><%= player.team %></h7>
-      <% } else { %>
-      <p>None</p>
-      <% } %>
+<link rel="stylesheet" type="text/css" href="/stylesheets/show.css">
+<body>
+<% include ../partials/header %>
+    <div id="details">
+        <section id="players-page">
+            <div>
+                <h2>
+                    <%= player.hooper %>
+                </h2>
+            </div>
+            <div>
+                <img class="img" src="<%= player.img %>"></div>
+            <div>
+                <BR>
+                <div>
+                    <BR>
+                    <h4>Hooper Rating</h4>
+                </div>
+                <div>
+                    <%= player.avgRating %>
+                </div>
+                <div>
+                  <BR>
+                  <h4>Age</h4>
+              </div>
+              <div>
+                  <%= player.age %>
+              </div>
+              <div>
+                <BR>
+                <h4>Height</h4>
+            </div>
+            <div>
+                <%= player.height %>
+            </div>
+            <div>
+              <BR>
+              <h4>Position</h4>
+          </div>
+          <div>
+              <%= player.position %>
+          </div>
+                <div>
+                    <BR>
+                    <h4>Comments</h4>
+                </div>
+                <div>
+                    <%= player.comments %>
+                </div>
+                <div>
+                    <BR>
+                    <% if (user &&(player.athlete.equals(user._id))){ %>
+                        <a href="/players/<%=player._id%>/edit" id="button"> &nbsp; Edit Hooper &nbsp; </a>
+                        <BR>
+                        <BR>
+                        <form action="/players/<%= player.id %>?_method=DELETE" method="POST">
+                            <button type="delete" id="button">Delete</button>
+                        </form>
+                        <% } %>
+                </div>
+
+            </div>
+        </section>
     </div>
-    <div class="center"><h2>Positions</h2></div>
-    <div class="center"><p><%= player.position.join(', '); %></p></div>
-    <div class="center"><h2>Age</h2></div>
-    <div class="center"><p><%= player.age %></p></div>
-    div class="center"><h2>Height</h2></div>
-    <div class="center"><p><%= player.height %></p></div>
-    <br />
-    <div class="center">
-      <% if (user) { %>
-      <button type="submit" id="editBtn">
-        <a href="/players/<%= player.id %>/edit">Edit</a>
-      </button>
-      <form action="/following" method="POST">
-        <button
-          type="submit"
-          name="id"
-          value="<%= player._id %>"
-          id="newFollow"
-        >+ Follow
-        </button>
-      </form>
-      <% } %>
+    <br><br>
+    <div id="reviewContainer">
+        <h2>Comments</h2>
+        <form id="add-comment-form" method="POST" action="/players/<%= player._id %>/comments">
+            <% if (user) { %>
+                <label>Rating:</label>
+                <BR>
+                <select name="rating" class="input">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option selected="selected">
+                4
+            </option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+                <BR>
+                <label>Comment:</label>
+                <BR>
+                <textarea name="commentContent" class="input"></textarea>
+                <BR>
+                <input type="submit" value="Add Comment" id="button">
+        </form>
+        <% } %>content
+            <div id="comments">
+                <% if (player.comments.length) { %>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>
+                                    <h4>Rating</h4>
+                                </th>
+                                <th>
+                                    <h4>Comment</h4>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% player.comments.forEach(function(p) { %>
+                                <tr>
+                                    <td>
+                                        <%= p.rating %>
+                                    </td>
+                                    <td>
+                                        <%= p.commentContent %>
+                                    </td>
+                                </tr>
+                                <% }); %>
+                        </tbody>
+                    </table>
+                    <% } else { %>
+                        <h5>No Comments Yet</h5>
+                        <% } %>
+            </div>
     </div>
+    </div>
+    <% include ../partials/footer %>
   </body>
-</html>

@@ -1,36 +1,59 @@
 const mongoose = require("mongoose");
 
-const playerSchema = new mongoose.Schema(
+// optional shortcut to the mongoose.Schema class
+const Schema = mongoose.Schema;
+
+let commentSchema = new Schema(
   {
-    name: {
+    rating: {
+      type: Number,
+    },
+
+    commentContent: {
       type: String,
       required: true,
     },
-    team: {
+    athlete: { type: Schema.Types.ObjectId, ref: "Athlete" },
+  },
+
+  {
+    timestamps: true,
+  }
+);
+
+let playerSchema = new Schema(
+  {
+    hooper: {
       type: String,
       required: true,
     },
-    position: {
-      type: [String],
-      enum: [
-        "Point Guard",
-        "Shooting Guard",
-        "Power Forward",
-        "Small Forward",
-        "Center",
-      ],
-      required: true,
+    img: {
+      type: String,
+      default:
+        "https://pimage.sport-thieme.de/detail-fillscale/wilson-evolution-basketball/268-9119",
+    },
+    image: {
+      type: String,
+      default: "",
+    },
+    avgRating: {
+      type: Number,
+      default: 10,
     },
     age: {
       type: Number,
-      min: 1,
-      required: true,
     },
     height: {
       type: Number,
-      min: 1,
-      required: true,
     },
+    position: {
+      type: String,
+    },
+    athlete: {
+      type: Schema.Types.ObjectId,
+      ref: "Athlete",
+    },
+    comments: [commentSchema],
   },
   {
     timestamps: true,
